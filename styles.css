@@ -38,24 +38,54 @@ header nav .logo {
     font-weight: bold;
 }
 
-header nav ul {
+header nav .nav-menu {
     list-style: none;
     display: flex;
 }
 
-header nav ul li {
+header nav .nav-menu li {
     margin-left: 25px;
 }
 
-header nav ul li a {
+header nav .nav-menu li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-header nav ul li a:hover,
-header nav ul li a.active {
+header nav .nav-menu li a:hover,
+header nav .nav-menu li a.active {
     color: #ff6347;
+}
+
+/* HAMBURGER MENU */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* SECTIONS */
@@ -153,17 +183,152 @@ footer {
     text-align: center;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    header nav{
-        flex-direction: column;
+/* RESPONSIVE - TABLET AND SMALLER */
+@media (max-width: 768px) {
+    /* NAVBAR */
+    header nav {
+        padding: 15px 20px;
     }
-    header nav ul{
-        flex-direction: column;
-        margin-top: 10px;
+
+    header nav .logo {
+        font-size: 20px;
     }
-    header nav ul li{
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #111;
+        padding: 20px;
+        z-index: 99;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
         margin-left: 0;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    /* SECTIONS */
+    section {
+        padding: 60px 20px;
+    }
+
+    .home h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .home p {
+        font-size: 16px;
+    }
+
+    /* PROJECTS */
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .project-card img {
+        height: 120px;
+    }
+
+    /* SKILLS */
+    .skills ul {
+        max-width: 100%;
+    }
+
+    .skills ul li {
+        font-size: 16px;
+    }
+
+    /* CONTACT FORM */
+    .contact form {
+        max-width: 100%;
+    }
+}
+
+/* RESPONSIVE - MOBILE (SMALL PHONES) */
+@media (max-width: 480px) {
+    /* NAVBAR */
+    header nav {
+        padding: 12px 15px;
+    }
+
+    header nav .logo {
+        font-size: 18px;
+    }
+
+    .menu-toggle span {
+        width: 22px;
+        height: 2.5px;
+        margin: 4px 0;
+    }
+
+    .nav-menu li {
+        margin-bottom: 12px;
+    }
+
+    .nav-menu li a {
+        font-size: 16px;
+    }
+
+    /* SECTIONS */
+    section {
+        padding: 40px 15px;
+    }
+
+    .home h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .home p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .justify-text {
+        text-align: left;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    /* FORM ELEMENTS */
+    .contact input,
+    .contact textarea {
+        font-size: 16px;
+        padding: 8px;
+        margin-bottom: 12px;
+    }
+
+    .contact button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* RESPONSIVE - LARGE SCREENS (DESKTOP) */
+@media (min-width: 1024px) {
+    header nav {
+        padding: 15px 80px;
+    }
+    
+    section {
+        padding: 80px 100px;
     }
 }
