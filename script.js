@@ -37,3 +37,11 @@ window.addEventListener("scroll", () => {
     });
 });
 
+// Project 1 Click Handler
+const project1 = document.getElementById('project1');
+if (project1) {
+    project1.addEventListener('click', () => {
+        window.open('project1-details.html', '_self');
+    });
+}
+

@@ -94,6 +94,34 @@ section {
     text-align: center;
 }
 
+/* ABOUT - layout for avatar + content */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#111,#333);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.about-content {
+    max-width: 780px;
+}
+
 /* HOME */
 .home h1 {
     font-size: 48px;
@@ -302,6 +330,16 @@ footer {
         text-align: left;
     }
 
+    .about-container {
+        gap: 12px;
+    }
+
+    .about-avatar {
+        width: 120px;
+        height: 120px;
+        font-size: 32px;
+    }
+
     /* FOOTER */
     footer {
         padding: 15px;
@@ -330,5 +368,24 @@ footer {
     
     section {
         padding: 80px 100px;
+    }
+    
+    /* ABOUT: two-column layout on laptop/desktop */
+    .about-container {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .about-avatar {
+        width: 220px;
+        height: 220px;
+        font-size: 48px;
+        flex: 0 0 220px;
+        margin-right: 40px;
+    }
+
+    .about-content {
+        flex: 1 1 auto;
     }
 }

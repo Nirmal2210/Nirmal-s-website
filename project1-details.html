@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Distraction Monitor - Project Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-details {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .project-details h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .project-details h2 {
+            color: #0066cc;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .project-details ul, .project-details ol {
+            margin-left: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .project-details li {
+            margin-bottom: 10px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tech-tag {
+            background: #0066cc;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .back-button:hover {
+            background: #0052a3;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .feature-box h3 {
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        .feature-box p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">NC</div>
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="project-details">
+    <h1>🎯 Study Distraction Monitor - AI Eye Tracking System</h1>
+    
+    <div style="margin: 30px 0; text-align: center;">
+        <img src="images/distraction-monitor-screenshot.jpg" alt="Study Distraction Monitor Dashboard" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+        <p style="color: #666; margin-top: 10px; font-size: 0.9em;">Study Distraction Monitor Dashboard with Analytics</p>
+    </div>
+    
+    <h2>Overview</h2>
+    <p>A Django-based web application that monitors student attention and distraction during study sessions using real-time webcam AI detection. The system combines face tracking, eye tracking, and head position analysis with machine learning to predict focus/distraction states.</p>
+    
+    <h2>Key Features</h2>
+    <div class="feature-grid">
+        <div class="feature-box">
+            <h3>🎥 Real-Time Detection</h3>
+            <p>Face detection, eye tracking with EAR (Eye Aspect Ratio), and head orientation analysis. Real-time alerts if face/eyes missing for >5 seconds.</p>
+        </div>
+        <div class="feature-box">
+            <h3>📊 Session Tracking</h3>
+            <p>Monitors tab switching, keyboard activity, mouse movements, and idle time detection during study sessions.</p>
+        </div>
+        <div class="feature-box">
+            <h3>🤖 Machine Learning</h3>
+            <p>Random Forest classifier with 100% accuracy on training data. Real-time confidence scores for focus/distraction predictions.</p>
+        </div>
+        <div class="feature-box">
+            <h3>📈 Analytics & Reports</h3>
+            <p>Weekly attendance charts, session summaries, attention percentages, and CSV export for external analysis.</p>
+        </div>
+    </div>
+    
+    <h2>Technical Stack</h2>
+    <div class="tech-stack">
+        <span class="tech-tag">Django</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">OpenCV</span>
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag">Face Recognition</span>
+        <span class="tech-tag">Eye Tracking</span>
+        <span class="tech-tag">Machine Learning</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">HTML/CSS</span>
+    </div>
+    
+    <h2>Detailed Features</h2>
+    
+    <h3>Real-Time Detection System</h3>
+    <ul>
+        <li><strong>Face Detection:</strong> Detects if user is present in front of screen</li>
+        <li><strong>Eye Tracking:</strong> Monitors if eyes are open/closed using Eye Aspect Ratio (EAR)</li>
+        <li><strong>Head Position:</strong> Detects head orientation (left, center, right)</li>
+        <li><strong>Attention Warnings:</strong> Real-time alerts if face/eyes missing for >5 seconds</li>
+    </ul>
+    
+    <h3>Session Navigation & Analytics</h3>
+    <ul>
+        <li><strong>Tab Switch Monitoring:</strong> Counts when user switches browser tabs</li>
+        <li><strong>Keyboard Activity:</strong> Tracks key presses during session</li>
+        <li><strong>Mouse Tracking:</strong> Monitors mouse movements and gestures</li>
+        <li><strong>Idle Time:</strong> Measures inactivity periods</li>
+    </ul>
+    
+    <h3>Machine Learning Component</h3>
+    <ul>
+        <li><strong>Model Type:</strong> Random Forest Classifier</li>
+        <li><strong>Training Accuracy:</strong> 100% on training data</li>
+        <li><strong>Prediction Type:</strong> Focus/Distraction classification</li>
+        <li><strong>Real-time Probabilities:</strong> Confidence scores for predictions</li>
+    </ul>
+    
+    <h3>Reports & Export</h3>
+    <ul>
+        <li><strong>Weekly Attendance Chart:</strong> Line chart showing daily attention percentage</li>
+        <li><strong>Session Summary:</strong> Focused/Distracted session counts</li>
+        <li><strong>Attention Percentage:</strong> Average attention rate over 7 days</li>
+        <li><strong>CSV Export:</strong> Download all session data for external analysis</li>
+    </ul>
+    
+    <h2>Technologies Used</h2>
+    <ol>
+        <li><strong>Backend:</strong> Django 6.0+, Python 3.8+</li>
+        <li><strong>Computer Vision:</strong> OpenCV for face/eye detection</li>
+        <li><strong>Machine Learning:</strong> Scikit-learn (Random Forest), Pandas, NumPy</li>
+        <li><strong>Model Serialization:</strong> Joblib</li>
+        <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Data Storage:</strong> SQLite Database</li>
+    </ol>
+    
+    <h2>Project Highlights</h2>
+    <ul>
+        <li>✅ Real-time webcam processing without local storage of videos</li>
+        <li>✅ Intelligent attention prediction with ML model</li>
+        <li>✅ Comprehensive session analytics dashboard</li>
+        <li>✅ User-friendly web interface</li>
+        <li>✅ Data export capabilities for research</li>
+        <li>✅ Privacy-focused design with no video recording</li>
+    </ul>
+    
+    <h2>Use Cases</h2>
+    <ul>
+        <li>📚 Online learning platforms</li>
+        <li>🏫 Educational institutions monitoring student engagement</li>
+        <li>💼 Remote work productivity tracking</li>
+        <li>🧠 Focus improvement tools for students</li>
+        <li>🔬 Research on attention and distraction patterns</li>
+    </ul>
+    
+    <a href="projects.html" class="back-button">← Back to Projects</a>
+</div>
+
+<footer>
+    <p>&copy; 2026 Nirmal Chaudhary. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
